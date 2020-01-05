@@ -36,6 +36,9 @@ void loop() {
   if (smokeA0 > 255){
   analogWrite(9, 255);
 }
+else if (smokeA0 >=100){
+  analogWrite(9,200);
+}
 else if (smokeA0 >=50){
   analogWrite(9,100);
 }
