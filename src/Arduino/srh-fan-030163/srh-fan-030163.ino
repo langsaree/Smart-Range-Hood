@@ -9,7 +9,7 @@ int fan = 3;
 int fanSpeed;
 
 int smokeA0; //A5
-int sensorThresMin = 0;  //ตั้ง ค่าความหนาของตวัน แก๊ส ก๊าซที่ 400
+int sensorThresMin = 0;  //ตั้ง ค่าความหนาของตวัน แก๊ส ก๊าซที่ 0
 int sensorThresMax = 255;
 void setup() {
   Serial.begin(9600);
@@ -33,13 +33,13 @@ void loop() {
   Serial.print("Pin A0: ");
   Serial.println(smokeA0);
 
-  if (smokeA0 > 255){
+  if (smokeA0 >= 255)    {
   analogWrite(9, 255);
 }
-else if (smokeA0 >=100){
+else if (smokeA0 >=150){
   analogWrite(9,200);
 }
-else if (smokeA0 >=50){
+else if (smokeA0 >=70){
   analogWrite(9,100);
 }
 else {
